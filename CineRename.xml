@@ -2,16 +2,16 @@
 <Container version="2">
   <Name>CineRename</Name>
   <Repository>ghcr.io/cinerename/cinerename:latest</Repository>
-  <Registry>https://github.com/CineRename/CineRename/pkgs/container/cinerename</Registry>
+  <Registry>https://github.com/CineRename/CineRename-Releases</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Support>https://github.com/CineRename/CineRename/issues</Support>
+  <Support>https://github.com/CineRename/CineRename-Releases/issues</Support>
   <Project>https://cinerename.app/</Project>
-  <Overview>CineRename is a fast, automated media renamer and organizer built with Rust. It monitors your incoming downloads folder and automatically parses, matches (via TMDB / TVDB), renames, and moves movies, TV shows, anime, and subtitles directly into clean Plex, Jellyfin, and Emby media libraries.</Overview>
+  <Overview>CineRename is a fast, automated media renamer and organizer built with Rust. It monitors your incoming downloads folder and automatically parses, matches (via TheTVDB, TVmaze, AniList &amp; Kitsu), renames, and moves movies, TV shows, anime, and subtitles directly into clean Plex, Jellyfin, and Emby media libraries.</Overview>
   <Category>MediaApp:Video MediaServer:Other Tools:Utilities</Category>
-  <Icon>https://raw.githubusercontent.com/CineRename/CineRename/main/src-tauri/icons/128x128.png</Icon>
+  <Icon>https://cinerename.app/favicon-192x192.png</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
-  <PostArgs>schedule /media/Inbox --every 15m --to /media/Library --subs fr --json</PostArgs>
+  <PostArgs>schedule /media/Inbox --every 15m --to /media/Library --subs en --json</PostArgs>
   <Config Name="Media Inbox (Watch Folder)" Target="/media/Inbox" Default="/mnt/user/downloads/complete" Mode="rw" Description="Path to your incoming downloads folder." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Media Library (Destination)" Target="/media/Library" Default="/mnt/user/media" Mode="rw" Description="Path to your organized media library (Plex / Jellyfin root)." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Configuration &amp; Logs" Target="/config" Default="/mnt/user/appdata/cinerename" Mode="rw" Description="Persistent configuration and cache folder." Type="Path" Display="always" Required="true" Mask="false"/>
